@@ -1,0 +1,410 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Calcualdora</title>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+        <script src="js/jquery-1.12.1.min.js"></script> 
+        <script src="js/bootstrap.min.js"></script>
+
+        <style>
+            div#cuerpo
+            {
+                margin: auto ;
+                width: 360px;
+                text-align: center;
+                margin-top: 80px;
+            }
+
+            #table 
+            {
+                text-align: center;  
+            }
+        </style>
+
+        <script>
+
+            function reset()
+            {
+                edt = document.getElementById("resultado");
+                edt.value = "";
+
+            }
+
+            function quitarItem()
+            {
+                edt = document.getElementById("resultado");
+                valorViejo = edt.value;
+                valorNuevo = valorViejo.slice(0,(valorViejo.length-1));
+                edt.value = valorNuevo;
+            }
+
+            function agregarItem(Item)
+            {
+                edt = document.getElementById("resultado");
+                valorViejo = edt.value;
+                valorNuevo = valorViejo + Item;
+                edt.value = valorNuevo;
+            }
+
+
+            function raiz()
+            {
+                edt = document.getElementById("resultado");
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'raiz':valor}
+                    }
+                )
+                .done(function(respuesta)
+                {
+                    edt.value = respuesta;
+                }
+                );
+                         
+            }
+
+            function calcular()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'calcular': valor}
+                    }
+                )
+                .done(function(resultado)
+                {
+                    
+                    edt.value = resultado;
+                }
+                )
+            }
+
+
+            function potencia()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'potencia': valor}
+                    }
+                )
+                .done(function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function sen ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'sen': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function cos ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'cos': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function tan ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'tan': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function sec ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'sec': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function csc ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'csc': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function cot ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'cot': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function arcsen ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'arcsen': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+
+            function arcos ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'arcos': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function arctan ()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'arctan': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function log()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'log': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+            function promedio()
+            {
+                edt = document.getElementById("resultado");
+
+                valor = edt.value;
+
+                $.ajax
+                (
+                    {
+                        url: 'server.php',
+                        method: 'POST',
+                        data: {'promedio': valor}
+                    }
+                )
+                .done (function(resultado)
+                {
+                    edt.value = resultado;
+                }
+                )
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <div id="cuerpo"> 
+            <table id= "table" class="table table-bordered table-hover">
+                <tr>
+                    <td colspan="4"><input type="text" class="form-control" id="resultado"></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="quitarItem()" class="btn btn-primary">Borrar</button></td>
+                    <td><button type="button" onclick="reset()" class="btn btn-primary">CE</button></td>
+                    <td><button type="button" onclick="reset()" class="btn btn-primary">C</button></td>
+                    <td><button type="button" onclick="agregarItem('/')" class="btn btn-primary">/</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="agregarItem('7')" class="btn btn-primary">7</button></td>
+                    <td><button type="button" onclick="agregarItem('8')" class="btn btn-primary">8</button></td>
+                    <td><button type="button" onclick="agregarItem('9')" class="btn btn-primary">9</button></td>
+                    <td><button type="button" onclick="agregarItem('*')" class="btn btn-primary">*</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="agregarItem('4')" class="btn btn-primary">4</button></td>
+                    <td><button type="button" onclick="agregarItem('5')" class="btn btn-primary">5</button></td>
+                    <td><button type="button" onclick="agregarItem('6')" class="btn btn-primary">6</button></td>
+                    <td><button type="button" onclick="agregarItem('+')" class="btn btn-primary">+</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="agregarItem('1')" class="btn btn-primary">1</button></td>
+                    <td><button type="button" onclick="agregarItem('2')" class="btn btn-primary">2</button></td>
+                    <td><button type="button" onclick="agregarItem('3')" class="btn btn-primary">3</button></td>
+                    <td><button type="button" onclick="agregarItem('-')" class="btn btn-primary">-</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="agregarItem('0')" class="btn btn-primary">0</button></td>
+                    <td><button type="button" onclick="agregarItem('.')" class="btn btn-primary">.</button></td>
+                    <td><button type="button" onclick="raiz()" class="btn btn-primary">Raíz</button></td>
+                    <td><button type="button" onclick="potencia()" class="btn btn-primary">Potencia</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="sen()" class="btn btn-primary">Sen</button></td>
+                    <td><button type="button" onclick="sec()" class="btn btn-primary">Sec</button></td>
+                    <td><button type="button" onclick="arcsen()" class="btn btn-primary">ArcSen</button></td>
+                    <td><button type="button" onclick="log()" class="btn btn-primary">Log</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="cos()" class="btn btn-primary">Cos</button></td>
+                    <td><button type="button" onclick="csc()" class="btn btn-primary">Csc</button></td>
+                    <td><button type="button" onclick="arcos()" class="btn btn-primary">ArcCos</button></td>
+                    <td><button type="button" onclick="promedio()" class="btn btn-primary">Promedio</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="tan()" class="btn btn-primary">Tan</button></td>
+                    <td><button type="button" onclick="cot()" class="btn btn-primary">Cot</button></td>
+                    <td><button type="button" onclick="arctan()" class="btn btn-primary">ArcTan</button></td>
+                    <td><button type="button" onclick="calcular()" class="btn btn-primary">=</button></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
